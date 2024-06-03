@@ -48,7 +48,7 @@ public class ServerData {
                 .filter(b -> priceSmallerThen.map(p -> b.getPrice() <= p).orElse(true))
                 .filter(b -> yearBiggerThen.map(p -> b.getYear() >= p).orElse(true))
                 .filter(b -> yearSmallerThen.map(p -> b.getYear() <= p).orElse(true))
-                .filter(b -> genres.map(g -> b.getGenres().containsAll(g)).orElse(true))
+                .filter(b -> genres.map(g -> b.getGenres().stream().anyMatch(g::contains)).orElse(true))
                 .sorted((b1, b2) -> b1.getTitle().compareToIgnoreCase(b2.getTitle()))
                 .toList();
     }

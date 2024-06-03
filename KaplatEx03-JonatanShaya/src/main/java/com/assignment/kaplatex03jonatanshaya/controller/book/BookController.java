@@ -60,13 +60,12 @@ public class BookController implements Controller {
             //“Error: no such Book with id <book number>”
             status = HttpStatus.NOT_FOUND;
         }
-
         DtoResponse<DtoBook> ret = new DtoResponse<>(returnedBook, errorMsg);
         return ResponseEntity.status(status).body(ret);
     }
 
     @PutMapping
-    public ResponseEntity<DtoResponse<Integer>> updateABookPrice(@RequestBody int id, @RequestBody int price) {
+    public ResponseEntity<DtoResponse<Integer>> updateABookPrice(@RequestParam int id, @RequestParam int price) {
         Optional<Book> book = Data.getBookById(id);
         String errorMsg = null;
         int oldPrice = 0;
@@ -89,7 +88,6 @@ public class BookController implements Controller {
         }
 
         DtoResponse<Integer> bodyResponse = new DtoResponse<>(oldPrice, errorMsg);
-
         return ResponseEntity.status(status).body(bodyResponse);
     }
 
