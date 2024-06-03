@@ -46,7 +46,7 @@ public class BookController implements Controller {
     @GetMapping
     public ResponseEntity<DtoResponse<DtoBook>> getABook(@RequestParam int id) {
         Optional<Book> book = Data.getBookById(id);
-        String errorMsg = null;
+        String errorMsg;
         DtoBook returnedBook = null;
         HttpStatusCode status;
 
@@ -67,7 +67,7 @@ public class BookController implements Controller {
     @PutMapping
     public ResponseEntity<DtoResponse<Integer>> updateABookPrice(@RequestParam int id, @RequestParam int price) {
         Optional<Book> book = Data.getBookById(id);
-        String errorMsg = null;
+        String errorMsg;
         int oldPrice = 0;
         HttpStatusCode status;
 
@@ -94,7 +94,7 @@ public class BookController implements Controller {
     @DeleteMapping
     public ResponseEntity<DtoResponse<Integer>> deleteABook(@RequestParam int id) {
         int leftBooks = 0;
-        String errorMsg = null;
+        String errorMsg;
         HttpStatusCode status;
 
         try{

@@ -4,20 +4,18 @@ import com.assignment.kaplatex03jonatanshaya.data.book.Book;
 import com.assignment.kaplatex03jonatanshaya.dto.DtoBook;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class ServerData {
     private final List<Book> books;
 
     public ServerData() {
-        books = new ArrayList<Book>();
+        books = new ArrayList<>();
     }
 
     public Book addBook(DtoBook book) {

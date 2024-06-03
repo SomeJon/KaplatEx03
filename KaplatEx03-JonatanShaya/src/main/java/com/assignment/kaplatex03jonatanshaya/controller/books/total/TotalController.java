@@ -4,7 +4,6 @@ import com.assignment.kaplatex03jonatanshaya.controller.Controller;
 import com.assignment.kaplatex03jonatanshaya.data.ServerData;
 import com.assignment.kaplatex03jonatanshaya.dto.DtoBook;
 import com.assignment.kaplatex03jonatanshaya.dto.DtoResponse;
-import com.assignment.kaplatex03jonatanshaya.data.book.Book;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
